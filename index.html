@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arelia Johnson, LLC — Scholar. Strategist. Voice.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1B2A;
+    --navy-mid: #162338;
+    --gold: #B8932A;
+    --gold-light: #D4A93C;
+    --cream: #F7F2EA;
+    --cream-warm: #EDE5D8;
+    --text-dark: #0D1B2A;
+    --text-mid: #3A3028;
+    --text-muted: #7A6E60;
+    --rule: #C9B89A;
+    --white: #FDFAF5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* -- NAV -- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 64px;
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.3); }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--cream);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold-light); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #BEB5A8;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* -- HERO -- */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 6rem 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-title strong {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: #A09080;
+    max-width: 440px;
+    margin: 1.5rem 0 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
+  .hero-visual {
+    position: relative;
+    overflow: hidden;
+    background: var(--navy-mid);
+  }
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13,27,42,0.6) 0%, rgba(184,147,42,0.12) 100%);
+    z-index: 1;
+  }
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px);
+  }
+  .hero-quote {
+    position: absolute;
+    bottom: 4rem;
+    left: 3rem;
+    right: 3rem;
+    z-index: 2;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+  .hero-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.4;
+  }
+  .hero-quote cite {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 0.75rem;
+    display: block;
+    font-style: normal;
+  }
+  .hero-credentials {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .cred-item { text-align: left; }
+  .cred-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .cred-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7A7060;
+    margin-top: 0.25rem;
+  }
+
+  /* -- SECTION STRUCTURE -- */
+  section { padding: 7rem 4rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text-dark);
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+  }
+  .section-heading em { font-style: italic; color: var(--gold); }
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+  }
+
+  /* -- ABOUT -- */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+  .about-portrait {
+    position: relative;
+  }
+  .portrait-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--cream-warm);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+  .portrait-initials {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.35;
+    letter-spacing: 0.1em;
+  }
+  .portrait-accent {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: 1rem;
+    bottom: 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    z-index: -1;
+  }
+  .portrait-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 1.25rem 1.5rem;
+    border-radius: 2px;
+    text-align: center;
+  }
+  .badge-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .badge-sub {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #A09080;
+    margin-top: 0.4rem;
+  }
+  .about-content p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    margin-bottom: 1.25rem;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+  .about-content p strong {
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  .tag {
+    border: 1px solid var(--rule);
+    padding: 0.35rem 0.9rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-radius: 1px;
+    background: transparent;
+  }
+  .affiliations {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .aff-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .aff-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    letter-spacing: 0.03em;
+  }
+  .aff-role {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* -- SERVICES -- */
+  #services { background: var(--cream); }
+  .services-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+  .services-intro p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--rule);
+  }
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .service-card:hover { background: var(--navy); }
+  .service-card:hover .service-num { color: rgba(184,147,42,0.3); }
+  .service-card:hover .service-title { color: var(--cream); }
+  .service-card:hover .service-desc { color: #9A9080; }
+  .service-card:hover .service-list li { color: #9A9080; }
+  .service-card:hover .service-list li::before { background: var(--gold); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--cream-warm);
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    transition: color 0.25s;
+  }
+  .service-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    transition: color 0.25s;
+  }
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    transition: color 0.25s;
+  }
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .service-list li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding-left: 1rem;
+    position: relative;
+    transition: color 0.25s;
+  }
+  .service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 1px;
+    background: var(--gold);
+    transition: background 0.25s;
+  }
+
+  /* -- BOOK -- */
+  #book {
+    background: var(--navy);
+    padding: 7rem 4rem;
+  }
+  .book-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 3.5rem auto 0;
+  }
+  .book-cover {
+    position: relative;
+  }
+  .book-cover-art {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background: var(--navy-mid);
+    border: 1px solid rgba(184,147,42,0.3);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .book-cover-art::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gold);
+  }
+  .book-cover-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--gold) 0, var(--gold) 1px,
+      transparent 1px, transparent 20px
+    );
+  }
+  .book-cover-art .book-title-art {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.25;
+    position: relative;
+    z-index: 1;
+  }
+  .book-cover-art .book-title-art span {
+    color: var(--gold-light);
+    font-style: italic;
+    display: block;
+    font-size: 1.6rem;
+  }
+  .book-cover-art .book-subtitle-art {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8A7A60;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+  }
+  .book-cover-art .book-author-art {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    position: relative;
+    z-index: 1;
+  }
+  .book-content .section-label { color: var(--gold-light); }
+  .book-content .section-label::before { background: var(--gold); }
+  .book-content .section-heading { color: var(--cream); max-width: 600px; }
+  .book-content .section-heading em { color: var(--gold-light); }
+  .book-desc {
+    font-size: 1rem;
+    color: #9A9080;
+    line-height: 1.85;
+    margin: 1.5rem 0;
+    max-width: 560px;
+    font-weight: 300;
+  }
+  .book-pillars {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+  .pillar-tag {
+    background: rgba(184,147,42,0.12);
+    border: 1px solid rgba(184,147,42,0.25);
+    color: var(--gold-light);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    border-radius: 1px;
+  }
+  .book-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; }
+
+  /* -- FRAMEWORKS -- */
+  #frameworks { background: var(--cream-warm); }
+  .frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    margin-top: 3.5rem;
+  }
+  .framework-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+  }
+  .framework-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .framework-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .framework-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .framework-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* -- OWNED PROJECT -- */
+  #owned {
+    background: var(--navy);
+    padding: 7rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #owned::before {
+    content: 'THE OWNED PROJECT';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.02);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .owned-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .owned-text .section-label { color: var(--gold-light); }
+  .owned-text .section-label::before { background: var(--gold); }
+  .owned-text .section-heading { color: var(--cream); }
+  .owned-text .section-heading em { color: var(--gold-light); }
+  .owned-text p {
+    font-size: 1rem;
+    color: #9A9080;
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+  .owned-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .owned-pillar {
+    border-left: 2px solid rgba(184,147,42,0.3);
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .owned-pillar:hover { border-color: var(--gold); }
+  .owned-pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .owned-pillar-desc {
+    font-size: 0.85rem;
+    color: #7A6E60;
+    line-height: 1.7;
+  }
+
+  /* -- SPEAKING -- */
+  #speaking { background: var(--white); }
+  .speaking-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+  .speaking-topics { display: flex; flex-direction: column; gap: 0; }
+  .topic-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    cursor: default;
+    transition: padding-left 0.2s;
+  }
+  .topic-item:hover { padding-left: 0.5rem; }
+  .topic-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding-top: 0.1rem;
+  }
+  .topic-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+  .topic-brief {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .speaking-sidebar {
+    background: var(--navy);
+    padding: 2.5rem;
+    border-radius: 2px;
+    position: sticky;
+    top: 5rem;
+  }
+  .sidebar-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+  }
+  .sidebar-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .detail-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6A6050;
+  }
+  .detail-val {
+    font-size: 0.85rem;
+    color: var(--cream);
+    font-weight: 400;
+  }
+  .testimonial-block {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: #BEB0A0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .testimonial-attr {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  /* -- CONTACT -- */
+  #contact { background: var(--cream); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+  .contact-info p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  .contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--gold-light);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .contact-detail-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+  .contact-detail-val {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-weight: 400;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-textarea { min-height: 130px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 1rem 2rem;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--navy-mid); }
+
+  /* -- FOOTER -- */
+  footer {
+    background: #080E18;
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .footer-logo span { color: var(--gold-light); }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5A504A;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: #4A4040;
+    letter-spacing: 0.05em;
+  }
+
+  /* -- ANIMATIONS -- */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* -- RESPONSIVE -- */
+  @media (max-width: 960px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero-text { padding: 8rem 1.5rem 5rem; }
+    .about-grid, .services-intro, .book-grid,
+    .owned-inner, .speaking-grid, .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .services-grid { grid-template-columns: 1fr; }
+    .frameworks-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .portrait-badge { position: static; margin-top: 1rem; display: inline-flex; gap: 1rem; }
+    #book { padding: 5rem 1.5rem; }
+    #owned { padding: 5rem 1.5rem; }
+    .nav-links li:not(:last-child) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">Arelia Johnson<span>, LLC</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#book">Hijacking Equity</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#" onclick="openPressKit(); return false;">Media Press Kit</a></li>
+    <li><a href="https://links.areliajohnson.com/widget/booking/66hiBt5NcGztfjbmmUUH" class="nav-cta" target="_blank">Work With Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Scholar · Strategist · Voice</p>
+    <h1 class="hero-title">
+      Dr. Arelia
+      <strong>Johnson</strong>
+    </h1>
+    <p class="hero-sub">A nationally recognized strategist, scholar-practitioner, and public servant — translating the language of liberation into practical tools for institutions, organizations, and movements.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#book" class="btn-ghost">Hijacking Equity</a>
+    </div>
+    <div class="hero-credentials">
+      <div class="cred-item">
+        <div class="cred-num">13+</div>
+        <div class="cred-label">Years Teaching (Public School to University)</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">15+</div>
+        <div class="cred-label">Years Facilitation &amp; L&amp;D</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">30</div>
+        <div class="cred-label">Years Community Organizing</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-pattern"></div>
+    <div class="hero-quote">
+      <p>"Joy reconnects us to our humanity by restoring our ability to feel, perceive, and relate beyond mere survival."</p>
+      <cite>— Dr. Arelia Johnson</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label fade-up">About Dr. Johnson</p>
+    <h2 class="section-heading fade-up">A career built at the <em>intersection</em> of scholarship, strategy, and service.</h2>
+    <hr class="section-rule">
+    <div class="about-grid">
+      <div class="about-portrait fade-up">
+        <div class="portrait-frame" style="background:none;">
+          <img src="headshot.jpg" alt="Dr. Arelia Johnson" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block;">
+        </div>
+        <div class="portrait-accent"></div>
+        <div class="portrait-badge">
+          <div class="badge-title">Ph.D.</div>
+          <div class="badge-sub">Sociology &amp; Criminology<br>Howard University</div>
+        </div>
+      </div>
+      <div class="about-content fade-up">
+        <p>Dr. Arelia Johnson is a nationally recognized strategist, scholar-practitioner, and public servant whose work sits at the intersection of policy, justice, and lived experience. A proud daughter of Houston's Sunnyside, TX, she has spent over a decade translating the language of liberation into practical tools for institutions, organizations, and movements.</p>
+        <p>As <strong>Harris County's first-ever Chief Officer of Human and Civil Rights</strong> — a position she herself created — Dr. Johnson shaped equity infrastructure at the county level, building frameworks that make justice measurable and organizational transformation real. She holds a Ph.D. in Sociology and Criminology from Howard University, where her dissertation research examined how systems fail to name, record, and protect the lives of transgender murder victims.</p>
+        <p>Her voice moves fluently between the boardroom and the block, between peer-reviewed research and personal testimony. She is the founder of <strong>Joy is Strategy™</strong>, a convening for women that centers joy as a practical, political, and communal strategy — and the author of <em>Hijacking Equity and the Fight for Justice</em>.</p>
+        <div class="about-tags">
+          <span class="tag">Equity Strategy</span>
+          <span class="tag">Criminal Justice Reform</span>
+          <span class="tag">Organizational Transformation</span>
+          <span class="tag">Black Feminist Theory</span>
+          <span class="tag">Community Healing</span>
+          <span class="tag">Policy Analysis</span>
+          <span class="tag">Liberation Leadership</span>
+        </div>
+        <div class="affiliations">
+          <div class="aff-item">
+            <span class="aff-name">Howard University</span>
+            <span class="aff-role">Ph.D., Sociology &amp; Criminology</span>
+          </div>
+          <div class="aff-item">
+            <span class="aff-name">Texas Southern University</span>
+            <span class="aff-role">MA, Sociology — Minor in African American Literature</span>
+          </div>
+          <div class="aff-item">
+            <span class="aff-name">Harris County</span>
+            <span class="aff-role">First Chief, Human &amp; Civil Rights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-intro">
+      <div>
+        <p class="section-label fade-up">What We Do</p>
+        <h2 class="section-heading fade-up">Strategic counsel for those doing <em>the real work.</em></h2>
+      </div>
+      <p class="fade-up" style="color: var(--text-muted); font-size:0.95rem; line-height:1.85; font-weight:300; align-self:end;">Dr. Johnson is more than a social scientist. She is a practitioner. She has built programs and offices, written policy, taught in schools, and curated spaces for community. Audiences and organizations leave informed and activated.</p>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-title">Keynote Speaking &amp; Facilitation</div>
+        <p class="service-desc">Powerful, research-grounded presentations for conferences, institutions, and leadership convenings.</p>
+        <ul class="service-list">
+          <li>Keynote addresses &amp; plenary sessions</li>
+          <li>Panel moderation &amp; facilitation</li>
+          <li>TEDx-style talks</li>
+          <li>Retreat &amp; convening design</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-title">Consulting &amp; Organizational Strategy</div>
+        <p class="service-desc">Deep-dive partnerships with institutions ready to move from equity statements to equity systems.</p>
+        <ul class="service-list">
+          <li>Equity audits &amp; organizational assessments</li>
+          <li>Policy analysis and language review</li>
+          <li>R.E.D.I. Framework™ implementation</li>
+          <li>Distributive Justice strategy mapping</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-title">Training &amp; Professional Development</div>
+        <p class="service-desc">Transformative learning experiences that go beyond compliance to build real cultural competency.</p>
+        <ul class="service-list">
+          <li>Language Matters™ masterclass series</li>
+          <li>SOGIE &amp; DEI training programs</li>
+          <li>Joy Is Strategy™ workshop</li>
+          <li>Custom curriculum development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="section-inner">
+    <p class="section-label fade-up" style="color: var(--gold-light);">New Publication</p>
+    <h2 class="section-heading fade-up" style="color: var(--cream);">The book the moment demands.</h2>
+  </div>
+  <div class="book-grid">
+    <div class="book-cover fade-up">
+      <img src="book-cover.png" alt="Hijacking Equity and the Fight for Justice — book cover" style="width:100%; border-radius:2px; display:block; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
+    </div>
+    <div class="book-content fade-up">
+      <p class="book-desc">At a moment when the word "equity" has been stripped, weaponized, and legislated away, Dr. Johnson offers something the national conversation desperately needs: clarity. This groundbreaking book dismantles the deliberate confusion around equity language, exposes how power operates through the manipulation of words, and gives readers — whether they are in a boardroom, city hall, or a classroom — the tools to fight back with precision and purpose.</p>
+      <p class="book-desc">Anchored in her original theoretical contribution, Distributive Justice (DJ), and the practical application of Joy is Strategy™, this is a practitioner's guide to language, liberation, and leadership in a time of fear.</p>
+      <div class="book-pillars">
+        <span class="pillar-tag">Distributive Justice</span>
+        <span class="pillar-tag">R.E.D.I. Framework™</span>
+        <span class="pillar-tag">Joy is Strategy™</span>
+        <span class="pillar-tag">Language Strategy</span>
+        <span class="pillar-tag">Liberation Leadership</span>
+        <span class="pillar-tag">Outmaneuvering Hostile Systems</span>
+      </div>
+      <div class="book-buttons">
+        <a href="https://www.paypal.com/ncp/payment/6V9FGK2ULRRSU" target="_blank" class="btn-primary">Pre-Order &amp; Inquiries</a>
+        <a href="#contact" class="btn-ghost">Bulk &amp; Institutional Orders</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section id="frameworks">
+  <div class="section-inner">
+    <p class="section-label fade-up">Original Frameworks</p>
+    <h2 class="section-heading fade-up">Built for practitioners. Grounded in <em>scholarship.</em></h2>
+    <div class="frameworks-grid fade-up">
+      <div class="framework-card">
+        <div class="framework-icon">D.J.</div>
+        <div class="framework-name">Distributive Justice</div>
+        <div class="framework-tagline">Equity's Strategic Evolution</div>
+        <p class="framework-desc">Dr. Johnson's original theoretical contribution, positioned as a fourth sociological paradigm. Distributive Justice moves beyond the language of equity toward actionable redistribution of power, access, and resources — grounded in Black feminist, decolonial, and abolitionist intellectual traditions.</p>
+      </div>
+      <div class="framework-card">
+        <div class="framework-icon">Joy</div>
+        <div class="framework-name">Joy Is Strategy™</div>
+        <div class="framework-tagline">Joy Restores. Oppression Depletes.</div>
+        <p class="framework-desc">A framework centered on the radical proposition that joy is not a reward for justice work — it is a tool of it. Joy restores the three capacities that systems of oppression are designed to deplete: imagination, discernment, and solidarity. Delivered as workshops, keynotes, and training intensives.</p>
+      </div>
+      <div class="framework-card">
+        <div class="framework-icon">R.E.D.I.</div>
+        <div class="framework-name">The R.E.D.I. Framework™</div>
+        <div class="framework-tagline">Reimagine · Educate · Define · Innovate</div>
+        <p class="framework-desc">A four-phase organizational transformation model that moves institutions from performative equity commitments to structural change. Used with county governments, nonprofits, and educational institutions to assess, audit, and redesign systems from the inside out.</p>
+      </div>
+      <div class="framework-card">
+        <div class="framework-icon">T.T.M.</div>
+        <div class="framework-name">Tuesday Transformation Method™</div>
+        <div class="framework-tagline">Incremental. Intentional. Irreversible.</div>
+        <p class="framework-desc">A practitioner's methodology for sustaining equity work within hostile or resistant institutional environments. Built on the insight that transformation happens not in grand gestures but in consistent, strategic, small-scale acts of practice and presence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section id="speaking">
+  <div class="section-inner">
+    <p class="section-label fade-up">On the Stage</p>
+    <h2 class="section-heading fade-up">Speaking that <em>moves</em> people — and institutions.</h2>
+    <hr class="section-rule">
+    <div class="speaking-grid">
+      <div class="speaking-topics fade-up">
+        <div class="topic-item">
+          <span class="topic-num">01</span>
+          <div>
+            <div class="topic-name">Joy Is Not a Reward. It Is a Right.</div>
+            <p class="topic-brief">Dr. Johnson's signature TEDx-style talk. Joy as a practical, political, and communal strategy — and the three capacities oppression works to deplete.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">02</span>
+          <div>
+            <div class="topic-name">DEI Rollbacks &amp; the Political Hijacking of Equity</div>
+            <p class="topic-brief">A direct, research-grounded examination of how power operates through the manipulation of equity language — and what practitioners can do about it.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">03</span>
+          <div>
+            <div class="topic-name">Equity vs. Equality: Why the Difference Is Not Semantic</div>
+            <p class="topic-brief">Unpacking the deliberate conflation of equity and equality — and why the distinction carries real consequences for policy, programs, and people.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">04</span>
+          <div>
+            <div class="topic-name">Strategic Planning Using Distributive Justice</div>
+            <p class="topic-brief">An introduction to Dr. Johnson's original framework and its practical application for institutional strategy and organizational change.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">05</span>
+          <div>
+            <div class="topic-name">Policing, Trans Lives &amp; Institutional Erasure</div>
+            <p class="topic-brief">Drawn from her dissertation research — how institutions fail to name, record, and protect, and what accountability infrastructure must look like.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">06</span>
+          <div>
+            <div class="topic-name">Black Feminist Frameworks in Policy &amp; Leadership</div>
+            <p class="topic-brief">Bringing the intellectual traditions of Black feminist thought into the practical work of policy design, organizational leadership, and institutional accountability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="speaking-sidebar fade-up">
+        <div class="sidebar-heading">Booking Information</div>
+        <div class="sidebar-detail">
+          <div class="detail-row">
+            <span class="detail-label">Format</span>
+            <span class="detail-val">TV · Radio · Podcast · Panels · Keynotes</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Also Available For</span>
+            <span class="detail-val">News Segments · Op-Ed · Documentary</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Audience</span>
+            <span class="detail-val">Organizations, Institutions, Media</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Location</span>
+            <span class="detail-val">Pearland, TX — Available Nationwide</span>
+          </div>
+        </div>
+        <a href="mailto:drj@areliajohnson.com" class="btn-primary" style="width:100%; text-align:center; display:block;">Book Dr. Johnson</a>
+        <div class="testimonial-block">
+          <p class="testimonial-text">"Dr. Johnson doesn't just speak to a room — she shifts something in it. Our team left ready to move differently."</p>
+          <span class="testimonial-attr">— Karen Walker, Advancing African American Families and Children Forum 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label fade-up">Get In Touch</p>
+    <h2 class="section-heading fade-up">Ready to <em>work together?</em></h2>
+    <hr class="section-rule">
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <p>Whether you're seeking consulting services, a speaking engagement, training for your team, or a partnership with Joy is Strategy™ — Dr. Johnson's team is ready to connect.</p>
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-val">drj@areliajohnsonllc.com</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.09h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-val">(202) 735-4991</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Mailing Address</div>
+              <div class="contact-detail-val">P.O. Box 604<br>Pearland, Texas 77581</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" id="fname" class="form-input" placeholder="Your first name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" id="lname" class="form-input" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-input" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Organization</label>
+            <input type="text" id="org" class="form-input" placeholder="Your organization or company">
+          </div>
+          <div class="form-group">
+            <label class="form-label">How Can We Help?</label>
+            <select id="service" class="form-select">
+              <option value="">Select a service area</option>
+              <option>Consulting &amp; Organizational Strategy</option>
+              <option>Speaking Engagement</option>
+              <option>Training &amp; Professional Development</option>
+              <option>Joy is Strategy™</option>
+              <option>Book / Publishing Inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea id="message" class="form-textarea" placeholder="Tell us about your project, event, or vision..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Arelia Johnson<span>, LLC</span></a>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#book">Hijacking Equity</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">Dr. Arelia Johnson &nbsp;&middot;&nbsp; Scholar. Strategist. Voice. &nbsp;&middot;&nbsp; &copy; 2025 Arelia Johnson, LLC. Houston, Texas.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const siblings = [...el.parentElement.querySelectorAll('.fade-up')];
+        const delay = siblings.indexOf(el) * 80;
+        setTimeout(() => el.classList.add('visible'), delay);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function openPressKit() {
+    const modal = document.getElementById('presskit-modal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePressKit() {
+    const modal = document.getElementById('presskit-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('presskit-modal');
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) closePressKit();
+      });
+    }
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const fname    = document.getElementById('fname').value.trim();
+    const lname    = document.getElementById('lname').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const org      = document.getElementById('org').value.trim();
+    const service  = document.getElementById('service').value.trim();
+    const message  = document.getElementById('message').value.trim();
+
+    const subject = encodeURIComponent('Website Inquiry — ' + (service || 'General'));
+    const body = encodeURIComponent(
+      'Name: ' + fname + ' ' + lname + '\n' +
+      'Email: ' + email + '\n' +
+      'Organization: ' + org + '\n' +
+      'Service Area: ' + service + '\n\n' +
+      'Message:\n' + message
+    );
+
+    window.location.href = 'mailto:drj@areliajohnsonllc.com?subject=' + subject + '&body=' + body;
+
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#1D6A3A';
+    btn.disabled = true;
+  }
+</script>
+<!-- PRESS KIT MODAL -->
+<div id="presskit-modal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.75); overflow-y:auto; padding:2rem;">
+  <div style="max-width:900px; margin:0 auto; position:relative;">
+    <!-- Close + Print buttons -->
+    <div style="display:flex; gap:1rem; justify-content:flex-end; margin-bottom:1rem;">
+      <button onclick="window.print()" style="background:var(--gold); color:var(--navy); border:none; padding:0.6rem 1.4rem; font-family:'DM Sans',sans-serif; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">⬇ Print / Save PDF</button>
+      <button onclick="closePressKit()" style="background:#fff; color:var(--navy); border:none; padding:0.6rem 1.4rem; font-family:'DM Sans',sans-serif; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">✕ Close</button>
+    </div>
+    <!-- Press Kit Content -->
+    <div id="presskit-content" style="background:#F7F2EA; font-family:'Montserrat',sans-serif; color:#0d0d0d; line-height:1.6; overflow:hidden; position:relative;">
+
+
+      <div class="pk-bg-accent"></div>
+      <div class="pk-bg-stripe"></div>
+
+      <div class="pk-header">
+        <div class="pk-header-left">
+          <p class="pk-eyebrow">Media Press Kit &nbsp;|&nbsp; Expert Booking Inquiry</p>
+          <div class="pk-h1">Dr. Arelia<br><span>Johnson</span></div>
+          <div class="pk-title-block">
+            <p>Ph.D., Sociology &amp; Criminology, Howard University<br>
+            Harris County's Chief Officer of Human &amp; Civil Rights<br>
+            Thought Leader &nbsp;|&nbsp; Scholar-Practitioner &nbsp;|&nbsp; Strategist</p>
+          </div>
+        </div>
+        <div class="pk-header-right">
+          <p class="pk-contact-label">Book Dr. Johnson</p>
+          <div class="pk-contact-info">
+            <p>(202) 735-4991</p>
+            <p>P.O. BOX 604</p>
+            <p>Pearland, Texas 77581</p>
+            <p>areliajohnsonllc.com</p>
+            <p>Available for: TV · Radio · Podcast · Panels · Keynotes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pk-main">
+        <div class="pk-col-left">
+          <div class="pk-bio">
+            <p class="pk-section-label">About Dr. Johnson</p>
+            <hr class="pk-rule">
+            <p>Dr. Arelia Johnson is a <strong>nationally recognized strategist, scholar-practitioner, and public servant</strong> whose work sits at the intersection of policy, justice, and lived experience. A proud daughter of Houston's Sunnyside, TX, she has spent over a decade translating the language of liberation into practical tools for institutions, organizations, and movements.</p>
+            <p>As <strong>Harris County's first-ever Chief Officer of Human and Civil Rights</strong>, Dr. Johnson has shaped equity infrastructure at the county level, building frameworks that make justice measurable and organizational transformation real. She holds a Ph.D. in Sociology and Criminology from Howard University, where her research examined how systems fail to name, record, and protect the lives of transgender murder victims.</p>
+            <p>Dr. Johnson is also the founder of <strong>Joy is Strategy™</strong>, a convening for women that centers joy as a practical, political, and communal strategy.</p>
+          </div>
+          <div class="pk-pullquote">
+            <p>"Joy reconnects us to our humanity by restoring our ability to feel, perceive, and relate beyond mere survival."</p>
+          </div>
+          <div>
+            <p class="pk-section-label">She Can Speak To</p>
+            <hr class="pk-rule">
+            <div class="pk-topics-grid">
+              <div class="pk-topic-pill">Equity vs. Equality: Why the Difference Is Not Semantic</div>
+              <div class="pk-topic-pill">Joy, Justice and Allyship</div>
+              <div class="pk-topic-pill">DEI Rollbacks &amp; the Political Hijacking of Equity</div>
+              <div class="pk-topic-pill">Joy as an Anti-Racist Strategy</div>
+              <div class="pk-topic-pill">Strategic Pivot of Language in Policy, SOPs, and Practice</div>
+              <div class="pk-topic-pill">Policing, Trans Lives &amp; Institutional Erasure</div>
+              <div class="pk-topic-pill">Black Feminist Frameworks in Policy &amp; Leadership</div>
+              <div class="pk-topic-pill">Strategic Planning using Distributive Justice</div>
+            </div>
+          </div>
+          <div class="pk-diff">
+            <p class="pk-section-label">What Makes Her Different</p>
+            <hr class="pk-rule">
+            <p>Dr. Johnson is more than a social scientist. She is a practitioner. She has built programs and offices, written policy, taught in schools, and curated spaces for community. Her voice moves fluently between the boardroom and the block, between peer-reviewed research and personal testimony. Audiences leave informed and activated.</p>
+          </div>
+        </div>
+
+        <div class="pk-col-right">
+          <div>
+            <p class="pk-section-label">New Book</p>
+            <hr class="pk-rule">
+            <div class="pk-book-block">
+              <p class="pk-book-title">Hijacking Equity and the Fight for Justice: A Practical Guide to Language, Liberation, and Leadership in a Time of Fear</p>
+              <p class="pk-book-sub">Forthcoming &nbsp;|&nbsp; Arelia Johnson, Ph.D.</p>
+              <p class="pk-book-desc">At a moment when the word "equity" has been stripped, weaponized, and legislated away, Dr. Johnson offers something the national conversation desperately needs: clarity. This groundbreaking book dismantles the deliberate confusion around equity language, exposes how power operates through the manipulation of words, and gives readers the tools to fight back with precision and purpose. Anchored in Distributive Justice (DJ) and Joy is Strategy™, this is a practitioner's guide to language, liberation, and leadership in a time of fear.</p>
+            </div>
+          </div>
+          <div>
+            <p class="pk-section-label">Credentials</p>
+            <hr class="pk-rule">
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>Ph.D., Sociology &amp; Criminology — Howard University</p></div>
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>MA, Sociology with a Minor in African American Literature — Texas Southern University</p></div>
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>Harris County's Chief Officer of Human &amp; Civil Rights</p></div>
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>13+ Years Teaching Experience (from Public School to University)</p></div>
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>15+ Years of Facilitation and Learning &amp; Development</p></div>
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>Almost 30 Years of Community Organizing</p></div>
+            <div class="pk-cred-item"><div class="pk-cred-dot"></div><p>Researcher: Identity &amp; Institutional Erasure</p></div>
+          </div>
+          <div>
+            <p class="pk-section-label">Sample Interview Questions</p>
+            <hr class="pk-rule">
+            <div class="pk-q-item">What does it mean for equity to be "hijacked" — and who benefits from that confusion?</div>
+            <div class="pk-q-item">How do institutions use language to protect power rather than people?</div>
+            <div class="pk-q-item">What is Distributive Justice, and why does it go further than DEI?</div>
+            <div class="pk-q-item">How do you respond to people who say DEI has "gone too far"?</div>
+            <div class="pk-q-item">What does joy have to do with social justice?</div>
+            <div class="pk-q-item">What does a civil rights infrastructure actually look like in a county government?</div>
+          </div>
+          <div>
+            <p class="pk-section-label">Ideal For</p>
+            <hr class="pk-rule">
+            <div class="pk-media-tags">
+              <span class="pk-tag">News Segments</span>
+              <span class="pk-tag">Talk Radio</span>
+              <span class="pk-tag">Podcast</span>
+              <span class="pk-tag">Panel Discussion</span>
+              <span class="pk-tag">Morning Shows</span>
+              <span class="pk-tag">Op-Ed</span>
+              <span class="pk-tag">Documentary</span>
+              <span class="pk-tag">Keynote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pk-footer">
+        <div class="pk-footer-left">
+          <p>Dr. Arelia Johnson &nbsp;·&nbsp; Scholar. Strategist. Voice.</p>
+        </div>
+        <div class="pk-footer-right">
+          <p>areliajohnsonllc.com &nbsp;|&nbsp; Available Nationwide</p>
+        </div>
+      </div>
+
+    </div><!-- end presskit-content -->
+  </div>
+</div>
+
+</body>
+</html>

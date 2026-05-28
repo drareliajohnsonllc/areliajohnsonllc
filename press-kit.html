@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Arelia Johnson | Media Press Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'TT Ramilas';
+    src: local('TT Ramilas'), local('TTRamilas');
+    font-weight: 400 900;
+    font-style: normal italic;
+  }
+</style>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0d0d0d;
+    --gold: #C8963E;
+    --gold-light: #e8b86d;
+    --cream: #F7F2EA;
+    --rust: #8B3A2A;
+    --sage: #4a5c4e;
+    --rule: #c8963e44;
+  }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .bg-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 3.2in;
+    height: 11in;
+    background: var(--ink);
+    z-index: 0;
+    clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .bg-gold-stripe {
+    position: absolute;
+    top: 0; right: 3.2in;
+    width: 0.18in;
+    height: 11in;
+    background: var(--gold);
+    z-index: 1;
+    transform: skewX(-4deg);
+  }
+  header {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 3.2in;
+    padding: 0;
+  }
+  .header-left {
+    padding: 0.3in 0.4in 0.2in 0.5in;
+    background: var(--cream);
+  }
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.1in;
+  }
+  h1 {
+    font-family: 'TT Ramilas', 'Cormorant Garamond', serif;
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  h1 span {
+    display: block;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--rust);
+  }
+  .title-block {
+    margin-top: 0.12in;
+    border-left: 3px solid var(--gold);
+    padding-left: 0.12in;
+  }
+  .title-block p {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: var(--sage);
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+  .header-right {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.2in 0.4in 0.2in 0.45in;
+  }
+  .contact-label {
+    font-size: 6.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.07in;
+    font-weight: 500;
+  }
+  .contact-info p {
+    font-size: 8.5pt;
+    color: #e8e0d5;
+    line-height: 1.7;
+  }
+  .contact-info a { color: var(--gold-light); text-decoration: none; }
+  main {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 3.2in;
+    gap: 0;
+  }
+  .col-left {
+    padding: 0.18in 0.35in 0.18in 0.5in;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    gap: 0.14in;
+  }
+  .col-right {
+    background: var(--ink);
+    padding: 0.18in 0.35in 0.18in 0.4in;
+    display: flex;
+    flex-direction: column;
+    gap: 0.14in;
+  }
+  .section-label {
+    font-size: 6.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.06in;
+  }
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin-bottom: 0.1in; }
+  .bio p { font-size: 9pt; line-height: 1.55; color: #1a1a1a; }
+  .bio p + p { margin-top: 0.1in; }
+  .bio strong { color: var(--rust); font-weight: 500; }
+  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1in 0.15in; }
+  .topic-pill {
+    background: white;
+    border-left: 3px solid var(--gold);
+    padding: 0.07in 0.1in;
+    font-size: 8pt;
+    line-height: 1.4;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .pullquote {
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 0.07in 0;
+    margin: 0.05in 0;
+  }
+  .pullquote p {
+    font-family: 'TT Ramilas', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--rust);
+    line-height: 1.45;
+  }
+  .cred-item { display: flex; align-items: flex-start; gap: 0.08in; margin-bottom: 0.07in; }
+  .cred-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 5px; flex-shrink: 0; }
+  .cred-item p { font-size: 8.5pt; color: #e8e0d5; line-height: 1.5; }
+  .book-block { border: 1px solid #ffffff22; padding: 0.1in; background: #1a1a1a; }
+  .book-title {
+    font-family: 'TT Ramilas', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 9.5pt;
+    color: var(--gold-light);
+    line-height: 1.4;
+    margin-bottom: 0.08in;
+    font-weight: 700;
+  }
+  .book-sub { font-size: 7.5pt; color: #b5afa6; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.1in; }
+  .book-desc { font-size: 8pt; color: #d5cfc6; line-height: 1.6; }
+  .question-item { padding: 0.07in 0; border-bottom: 1px solid #ffffff15; font-size: 8pt; color: #d5cfc6; line-height: 1.5; }
+  .question-item::before { content: "Q  "; color: var(--gold); font-weight: 500; }
+  .media-tags { display: flex; flex-wrap: wrap; gap: 0.06in; margin-top: 0.05in; }
+  .tag { font-size: 7pt; padding: 3px 8px; border: 1px solid var(--gold); color: var(--gold-light); letter-spacing: 0.05em; text-transform: uppercase; }
+  footer { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 3.2in; }
+  .footer-left {
+    background: var(--rust);
+    padding: 0.1in 0.35in 0.1in 0.5in;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-left p { color: #f5ede6; font-family: 'TT Ramilas', 'Cormorant Garamond', serif; font-size: 9pt; }
+  .footer-badge { font-size: 6.5pt; letter-spacing: 0.15em; text-transform: uppercase; color: #f5ede6cc; }
+  .footer-right { background: #111; padding: 0.1in 0.35in; display: flex; align-items: center; justify-content: center; }
+  .footer-right p { font-size: 7pt; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; text-align: center; }
+  @media print { body { margin: 0; background: var(--cream); } .page { width: 8.5in; } }
+  @media screen { body { padding: 0.25in; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bg-accent"></div>
+  <div class="bg-gold-stripe"></div>
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">Media Press Kit &nbsp;|&nbsp; Expert Booking Inquiry</p>
+      <h1>Dr. Arelia<br><span>Johnson</span></h1>
+      <div class="title-block">
+        <p>
+          Ph.D., Sociology &amp; Criminology, Howard University<br>
+          Harris County's Chief Officer of Human &amp; Civil Rights<br>
+          Thought Leader &nbsp;|&nbsp; Scholar-Practitioner &nbsp;|&nbsp; Strategist
+        </p>
+      </div>
+    </div>
+    <div class="header-right">
+      <p class="contact-label">Book Dr. Johnson</p>
+      <div class="contact-info">
+        <p>(202) 735-4991</p>
+        <p>P.O. BOX 604</p>
+        <p>Pearland, Texas 77581</p>
+        <p>areliajohnsonllc.com</p>
+        <p>Available for: TV · Radio · Podcast · Panels · Keynotes</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="col-left">
+      <div class="bio">
+        <p class="section-label">About Dr. Johnson</p>
+        <hr class="rule">
+        <p>Dr. Arelia Johnson is a <strong>nationally recognized strategist, scholar-practitioner, and public servant</strong> whose work sits at the intersection of policy, justice, and lived experience. A proud daughter of Houston's Sunnyside, TX, she has spent over a decade translating the language of liberation into practical tools for institutions, organizations, and movements.</p>
+        <p>As <strong>Harris County's first-ever Chief Officer of Human and Civil Rights</strong>, Dr. Johnson has shaped equity infrastructure at the county level, building frameworks that make justice measurable and organizational transformation real. She holds a Ph.D. in Sociology and Criminology from Howard University, where her research examined how systems fail to name, record, and protect the lives of transgender murder victims.</p>
+        <p>Dr. Johnson is also the founder of <strong>Joy is Strategy™</strong>, a convening for women that centers joy as a practical, political, and communal strategy.</p>
+      </div>
+      <div class="pullquote">
+        <p>"Joy reconnects us to our humanity by restoring our ability to feel, perceive, and relate beyond mere survival."</p>
+      </div>
+      <div>
+        <p class="section-label">She Can Speak To</p>
+        <hr class="rule">
+        <div class="topics-grid">
+          <div class="topic-pill">Equity vs. Equality: Why the Difference Is Not Semantic</div>
+          <div class="topic-pill">Joy, Justice and Allyship</div>
+          <div class="topic-pill">DEI Rollbacks &amp; the Political Hijacking of Equity</div>
+          <div class="topic-pill">Joy as an Anti-Racist Strategy</div>
+          <div class="topic-pill">Strategic Pivot of Language in Policy, SOPs, and Practice</div>
+          <div class="topic-pill">Policing, Trans Lives &amp; Institutional Erasure</div>
+          <div class="topic-pill">Black Feminist Frameworks in Policy &amp; Leadership</div>
+          <div class="topic-pill">Strategic Planning using Distributive Justice</div>
+        </div>
+      </div>
+      <div>
+        <p class="section-label">What Makes Her Different</p>
+        <hr class="rule">
+        <p style="font-size:9.5pt; line-height:1.7; color:#1a1a1a;">Dr. Johnson is more than a social scientist. She is a practitioner. She has built programs and offices, written policy, taught in schools, and curated spaces for community. Her voice moves fluently between the boardroom and the block, between peer-reviewed research and personal testimony. Audiences leave informed and activated.</p>
+      </div>
+    </div>
+    <div class="col-right">
+      <div>
+        <p class="section-label" style="color:var(--gold);">New Book</p>
+        <hr style="border:none; border-top: 1px solid #ffffff22; margin-bottom:0.1in;">
+        <div class="book-block">
+          <p class="book-title">Hijacking Equity and the Fight for Justice: A Practical Guide to Language, Liberation, and Leadership in a Time of Fear</p>
+          <p class="book-sub">Forthcoming &nbsp;|&nbsp; Arelia Johnson, Ph.D.</p>
+          <p class="book-desc">At a moment when the word "equity" has been stripped, weaponized, and legislated away, Dr. Johnson offers something the national conversation desperately needs: clarity. This groundbreaking book dismantles the deliberate confusion around equity language, exposes how power operates through the manipulation of words, and gives readers, whether they are in a boardroom, city hall, or a classroom, the tools to fight back with precision and purpose. Anchored in her original theoretical contribution, Distributive Justice (DJ) and the practical application of Joy is Strategy™, this is a practitioner's guide to language, liberation, and leadership in a time of fear.</p>
+        </div>
+      </div>
+      <div>
+        <p class="section-label" style="color:var(--gold);">Credentials</p>
+        <hr style="border:none; border-top: 1px solid #ffffff22; margin-bottom:0.1in;">
+        <div class="cred-item"><div class="cred-dot"></div><p>Ph.D., Sociology &amp; Criminology — Howard University</p></div>
+        <div class="cred-item"><div class="cred-dot"></div><p>MA, Sociology with a Minor in African American Literature — Texas Southern University</p></div>
+        <div class="cred-item"><div class="cred-dot"></div><p>Harris County's Chief Officer of Human &amp; Civil Rights</p></div>
+        <div class="cred-item"><div class="cred-dot"></div><p>13+ Years Teaching Experience (from Public School to University)</p></div>
+        <div class="cred-item"><div class="cred-dot"></div><p>15+ Years of Facilitation and Learning &amp; Development</p></div>
+        <div class="cred-item"><div class="cred-dot"></div><p>Almost 30 Years of Community Organizing</p></div>
+        <div class="cred-item"><div class="cred-dot"></div><p>Researcher: Identity &amp; Institutional Erasure</p></div>
+      </div>
+      <div>
+        <p class="section-label" style="color:var(--gold);">Sample Interview Questions</p>
+        <hr style="border:none; border-top: 1px solid #ffffff22; margin-bottom:0.1in;">
+        <div class="question-item">What does it mean for equity to be "hijacked" — and who benefits from that confusion?</div>
+        <div class="question-item">How do institutions use language to protect power rather than people?</div>
+        <div class="question-item">What is Distributive Justice, and why does it go further than DEI?</div>
+        <div class="question-item">How do you respond to people who say DEI has "gone too far"?</div>
+        <div class="question-item">What does joy have to do with social justice?</div>
+        <div class="question-item">What does a civil rights infrastructure actually look like in a county government?</div>
+      </div>
+      <div>
+        <p class="section-label" style="color:var(--gold);">Ideal For</p>
+        <hr style="border:none; border-top: 1px solid #ffffff22; margin-bottom:0.1in;">
+        <div class="media-tags">
+          <span class="tag">News Segments</span>
+          <span class="tag">Talk Radio</span>
+          <span class="tag">Podcast</span>
+          <span class="tag">Panel Discussion</span>
+          <span class="tag">Morning Shows</span>
+          <span class="tag">Op-Ed</span>
+          <span class="tag">Documentary</span>
+          <span class="tag">Keynote</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-left">
+      <p class="footer-badge">Dr. Arelia Johnson &nbsp;·&nbsp; Scholar. Strategist. Voice.</p>
+    </div>
+    <div class="footer-right">
+      <p>areliajohnsonllc.com &nbsp;|&nbsp; Available Nationwide</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
